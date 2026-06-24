@@ -62,7 +62,7 @@ async function renderSearchResults() {
             const newIds = window.mockData ? window.mockData.newMovies.map(m => m.id) : [];
             filtered = newIds.length > 0
                 ? newIds.map(id => allMovies.find(m => m.id === id)).filter(Boolean)
-                : allMovies.filter(m => m.id <= 5);
+                : allMovies.filter(m => m.year === 2026).slice(0, 6);
             title.textContent = 'Phim Mới Cập Nhật';
         } else if (!q) {
             // Không có filter -> hiển thị tất cả phim (trừ banner)
