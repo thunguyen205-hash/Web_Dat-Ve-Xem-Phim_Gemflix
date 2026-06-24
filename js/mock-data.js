@@ -18,7 +18,7 @@ const mockData = {
     
     // 5 Phim Mới / Hot (2024-2025)
     newMovies: [
-{
+        {
             id: 6,                          
             title: "Ai Thương Ai Mến",
             year: 2026,
@@ -167,7 +167,6 @@ const mockData = {
             director: "Trấn Thành",
             cast: "Trấn Thành, Lê Giang, Uyển Ân, Song Luân"
         },
-        
     ],
 
     // 5 Phim Thịnh Hành (2022-2023)
