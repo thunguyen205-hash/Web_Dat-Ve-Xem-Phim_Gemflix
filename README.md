@@ -1,13 +1,5 @@
 # 🎬 GemFlix - Website Đặt Vé Xem Phim Trực Tuyến
 
-## Thông tin Đồ án / Bài tập lớn
-- **Sinh viên thực hiện:** [Điền tên của bạn]
-- **Mã sinh viên:** [Điền mã SV]
-- **Lớp/Học phần:** [Điền thông tin lớp]
-- **Giảng viên hướng dẫn:** [Điền tên Giảng viên]
-
----
-
 Website đặt vé xem phim và quản trị rạp chiếu cho GemFlix. Dự án được xây dựng bằng HTML5/CSS3/JavaScript thuần, có giao diện khách hàng, luồng đặt vé trực quan nhiều bước, quản trị nội dung phim và quản lý lịch chiếu. Toàn bộ hệ thống hoạt động dựa trên dữ liệu giả lập (Mock Data) và LocalStorage ở phía client, không yêu cầu cấu hình backend hay database thực.
 
 ---
@@ -92,7 +84,7 @@ Mở trình duyệt: `http://localhost:3000`
 
 ---
 
-## Cơ sở dữ liệu và API giả lập
+## Cơ sở dữ liệu và API 
 
 Hệ thống hoạt động hoàn toàn offline ở phía Client. Không cần MySQL hay PHP.
 
