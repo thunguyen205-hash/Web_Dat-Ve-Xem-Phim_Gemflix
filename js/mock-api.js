@@ -11,6 +11,14 @@
     const API_BASE_URL_REMOTE = "http://gemflix.rf.gd/backend/api";
     const API_BASE_URL_LOCAL = "http://localhost/LT-Web_Dat-Ve-Xem-Phim/backend/api";
 
+    // === CACHE VERSION: Tăng số này lên mỗi khi cập nhật dữ liệu phim ===
+    const CACHE_VERSION = '3';
+    if (localStorage.getItem('mock_cache_version') !== CACHE_VERSION) {
+        localStorage.removeItem('mock_movies');
+        localStorage.removeItem('mock_showtimes');
+        localStorage.setItem('mock_cache_version', CACHE_VERSION);
+    }
+
     // Fallback movies in case mock-data.js fails to load — bao gồm TẤT CẢ phim (mới + thịnh hành)
     const initialMoviesFallback = [
         {
