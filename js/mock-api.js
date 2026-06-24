@@ -134,7 +134,7 @@
             title: "Thỏ Ơi!!",
             year: 2026,
             description: "Thỏ Ơi!! là phim tâm lý đối chất (thriller tâm lý) của đạo diễn Trấn Thành, khai thác vấn đề đạo đức và quyền phán xét trên mạng xã hội. Phim xoay quanh cuộc phỏng vấn talkshow về chuyện tình cảm cá nhân của một nữ MC, dần mở rộng thành những góc khuất, bi kịch hôn nhân và tâm lý nạn nhân của các nhân vật.",
-            imageUrl: "https://tse3.mm.bing.net/th/id/OIP.sfySEDT8tb83t-929btbQAHaJQ?pid=Api&P=0&h=180",
+            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.Aw-6JVXlymSTtJdT5oMLYQHaEK?pid=Api&P=0&h=180",
             trailerUrl: "https://www.youtube.com/embed/aJOXdRSj91g",
             duration: "123 phút",
             rating: "T13",                   
