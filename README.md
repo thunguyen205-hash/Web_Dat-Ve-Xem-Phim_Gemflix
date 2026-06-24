@@ -4,7 +4,16 @@ Website đặt vé xem phim và quản trị rạp chiếu cho GemFlix. Dự án
 
 ---
 
+## Demo trực tuyến
+
+Website đã được deploy tại:
+
+[Dùng thử website tại đây](https://web-dat-ve-xem-phim-gemflix.vercel.app/)
+
+---
+
 ## Mục lục
+- [Demo trực tuyến](#demo-trực-tuyến)
 - [Tính năng chính](#tính-năng-chính)
 - [Công nghệ sử dụng](#công-nghệ-sử-dụng)
 - [Yêu cầu hệ thống](#yêu-cầu-hệ-thống)
