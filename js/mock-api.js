@@ -214,38 +214,11 @@
         localStorage.removeItem("mock_showtimes");
         showtimes = [];
     }
-    if (showtimes.length === 0) {
-        // Wait for window.mockData to be ready (it will be loaded synchronously after script execution)
-        window.addEventListener('DOMContentLoaded', () => {
-            const activeMovies = getActiveMovies();
-            let showtimesData = getLocalStorage("mock_showtimes", []);
-            if (showtimesData.length === 0 && activeMovies.length > 0) {
-                let idCounter = 1;
-                const rooms = ["Phòng chiếu 1", "Phòng chiếu 2", "Phòng chiếu 3", "Phòng chiếu IMAX"];
-                const times = ["09:00", "12:00", "15:00", "18:00", "19:30", "21:00"];
-                
-                activeMovies.forEach(m => {
-                    for (let dayOffset = 0; dayOffset < 3; dayOffset++) {
-                        const dateObj = new Date();
-                        dateObj.setDate(dateObj.getDate() + dayOffset);
-                        const dateStr = dateObj.toLocaleDateString('en-CA');
-                        
-                        times.forEach((time, index) => {
-                            showtimesData.push({
-                                id: idCounter++,
-                                movie_id: m.id,
-                                movie_title: m.title,
-                                show_date: dateStr,
-                                show_time: time,
-                                room_name: rooms[(m.id + index + dayOffset) % rooms.length],
-                                price: 90000
-                            });
-                        });
-                    }
-                });
-                setLocalStorage("mock_showtimes", showtimesData);
-            }
-        });
+    // Vô hiệu hóa tính năng tự động tạo ngẫu nhiên lịch chiếu
+    // Để cho phép Admin xóa sạch lịch chiếu mà không bị tự động sinh lại
+    if (!localStorage.getItem("mock_showtimes_initialized")) {
+        setLocalStorage("mock_showtimes", []);
+        localStorage.setItem("mock_showtimes_initialized", "true");
     }
 
     let bookedSeats = getLocalStorage("mock_booked_seats", {
