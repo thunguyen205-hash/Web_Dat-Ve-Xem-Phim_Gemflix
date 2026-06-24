@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh Toán - Web Xem Phim</title>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
@@ -14,8 +15,9 @@
 
     <link rel="stylesheet" href="css/payment.css">
 
-<script src="js/mock-api.js"></script>
+    <script src="js/mock-api.js"></script>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -27,18 +29,18 @@
                 <li><a href="movies.html">Phim Bộ</a></li>
             </ul>
         </nav>
-        
+
         <div class="header-right">
             <div class="user-menu">
                 <button id="user-menu-btn" class="user-menu-btn" title="Tài khoản">
-                    <i class="fa-solid fa-user"></i> 
+                    <i class="fa-solid fa-user"></i>
                 </button>
                 <div class="user-dropdown" id="user-dropdown">
                     <a href="login.html">Đăng nhập</a>
                     <a href="register.html">Đăng kí</a>
                 </div>
             </div>
-            
+
             <div class="search-box">
                 <input id="header-search-input" type="text" placeholder="Tìm kiếm...">
                 <i id="header-search-btn" class="fa-solid fa-magnifying-glass" title="Tìm kiếm"></i>
@@ -48,10 +50,10 @@
 
     <main>
         <div class="payment-container">
-            
+
             <section class="payment-methods">
                 <h2>Xác Nhận Thanh Toán</h2>
-                
+
                 <div class="payment-tabs">
                     <button class="tab-btn active" data-tab="qr">
                         <i class="fa-solid fa-qrcode"></i> Quét Mã QR
@@ -63,13 +65,15 @@
                         <i class="fa-solid fa-money-bill-wave"></i> Tiền Mặt
                     </button>
                 </div>
-                
+
                 <div id="tab-qr" class="tab-content active">
                     <p>Quét mã QR bằng ứng dụng ngân hàng hoặc ví điện tử của bạn.</p>
-                    <img id="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=THANH%20TOAN%20GIA%20LAP" alt="Mã QR Code">
-                    <p style="text-align:center; font-size: 1rem; color: var(--grey-color);">Nội dung: THANH TOAN GIA LAP</p>
+                    <img id="qr-code-img"
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=THANH%20TOAN%20VE%20XEM%20PHIM"
+                        alt="Mã QR Code">
+                    <p style="text-align:center; font-size: 1rem; color: var(--grey-color);">Nội dung: THANH TOAN VE XEM PHIM</p>
                 </div>
-                
+
                 <div id="tab-card" class="tab-content">
                     <p>Nhập thông tin thẻ của bạn (Đây là form giả lập, không nhập thẻ thật).</p>
                     <div class="form-group">
@@ -81,16 +85,17 @@
                         <input id="card-num" type="text" placeholder="**** **** **** 1234">
                     </div>
                 </div>
-                
+
                 <div id="tab-cash" class="tab-content">
-                    <p>Vui lòng chuẩn bị số tiền mặt tương ứng và thanh toán tại quầy vé trước giờ chiếu phim 30 phút. Mã đặt vé của bạn sẽ được gửi qua SMS.</p>
+                    <p>Vui lòng chuẩn bị số tiền mặt tương ứng và thanh toán tại quầy vé trước giờ chiếu phim 30 phút.
+                        Mã đặt vé của bạn sẽ được gửi qua SMS.</p>
                 </div>
 
             </section>
 
             <aside class="booking-summary">
                 <h3>Chi Tiết Đặt Vé</h3>
-                
+
                 <div class="summary-movie-info">
                     <img id="summary-poster" src="" alt="Poster">
                     <div>
@@ -99,7 +104,7 @@
                         <p>Mã đặt vé: <strong id="summary-booking-id" style="color: #fff;">...</strong></p>
                     </div>
                 </div>
-                
+
                 <div class="summary-details">
                     <div class="summary-item">
                         <span>Ghế đã chọn:</span>
@@ -107,12 +112,13 @@
                     </div>
                     <p id="summary-seat-list" class="summary-item-list">(...)</p>
                 </div>
-                
+
                 <div class="summary-details" id="combo-summary-list">
-                    </div>
-                <div class="voucher-section" style="margin: 15px 0; border-top: 1px dashed var(--grey-color); padding-top: 15px;">
+                </div>
+                <div class="voucher-section"
+                    style="margin: 15px 0; border-top: 1px dashed var(--grey-color); padding-top: 15px;">
                     <p style="margin-bottom: 5px; font-size: 0.9rem; color: var(--grey-color);">Khuyến mãi / Voucher</p>
-                    
+
                     <div class="voucher-input-group">
                         <input type="text" id="selected-voucher-display" placeholder="Chưa chọn mã nào" readonly>
                         <button id="open-voucher-modal-btn" class="btn btn-secondary">
@@ -124,8 +130,9 @@
                     </div>
 
                     <p id="voucher-message" style="font-size: 0.85rem; margin-top: 5px;"></p>
-                    
-                    <div id="discount-row" class="summary-item" style="display: none; margin-top: 10px; color: #4caf50;">
+
+                    <div id="discount-row" class="summary-item"
+                        style="display: none; margin-top: 10px; color: #4caf50;">
                         <span>Giảm giá:</span>
                         <span id="discount-amount">-0 VND</span>
                     </div>
@@ -146,14 +153,14 @@
                     <span>Tổng cộng:</span>
                     <span id="summary-final-total">0 VND</span>
                 </div>
-                
+
                 <button id="confirm-payment" class="btn btn-primary">
                     <i class="fa-solid fa-lock"></i> Thanh Toán
                 </button>
             </aside>
         </div>
     </main>
-    
+
     <div class="payment-success-modal" id="payment-success-modal">
         <div class="payment-success-content">
             <i class="fa-solid fa-circle-check" style="font-size: 5rem; color: #4caf50; margin-bottom: 20px;"></i>
@@ -169,5 +176,5 @@
 
     <script src="js/payment.js?v=2"></script>
 </body>
-</html>
 
+</html>
