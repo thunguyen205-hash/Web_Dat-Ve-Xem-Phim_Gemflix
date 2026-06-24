@@ -87,13 +87,92 @@ const mockData = {
             genre: "Chính kịch, Gia đình",
             director: "Trấn Thành",
             cast: "Trấn Thành, Lê Giang, Uyển Ân, Song Luân"
-        }
+        },
+        {
+            id: 6,                          // ID tiếp theo chưa dùng
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },   
+        {
+            id: 7,                          // ID tiếp theo chưa dùng
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },   
+        {
+            id: 8,                          // ID tiếp theo chưa dùng
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        }, 
+        {
+            id: 9,                          // ID tiếp theo chưa dùng
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 10,                          // ID tiếp theo chưa dùng
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 11,                          // ID tiếp theo chưa dùng
+            title: "Minions & Quái Vật",
+            year: 2025,
+            description: "Minions & Quái Vật là câu chuyện vừa náo loạn, vừa ngớ ngẩn nhưng “hoàn toàn có thật” về cách Minions chinh phục Hollywood, trở thành ngôi sao điện ảnh, rồi mất tất cả, vô tình thả quái vật ra khắp thế giới và sau đó phải cùng nhau hợp sức để cứu lấy hành tinh khỏi chính mớ hỗn loạn mà mình tạo ra.",
+            imageUrl: "https://cdn.galaxycine.vn/media/2026/6/2/minions--monsters-1_1780410521978.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "90 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hoạt hình, Phiêu lưu",
+            director: "Pierre Coffin",
+            cast: "Pierre Coffin, Trey Parker, Jesse Eisenberg"
+        },   
+
     ],
 
     // 5 Phim Thịnh Hành (2022-2023)
     trendingMovies: [
         {
-            id: 6,
+            id: 12,
             title: "Lật Mặt 6: Tấm Vé Định Mệnh",
             year: 2023,
             description: "Một nhóm bạn thân trúng số độc đắc. Tấm vé đã thay đổi cuộc đời họ, nhưng cũng kéo theo những âm mưu, sự phản bội và cái chết. Tình bạn của họ bị thử thách bởi lòng tham.",
@@ -107,7 +186,7 @@ const mockData = {
             cast: "Quốc Cường, Trung Dũng, Huy Khánh, Thanh Thức"
         },
         {
-            id: 7,
+            id: 13,
             title: "Đất Rừng Phương Nam",
             year: 2023,
             description: "Phiên bản điện ảnh kể về hành trình phiêu lưu của cậu bé An đi tìm cha qua các tỉnh miền Tây Nam Bộ trong thời kỳ kháng chiến chống Pháp. Phim tái hiện vẻ đẹp hùng vĩ của thiên nhiên và con người nơi đây.",
@@ -121,7 +200,7 @@ const mockData = {
             cast: "Hạo Khang, Trấn Thành, Tuấn Trần, Hồng Ánh"
         },
         {
-            id: 8,
+            id: 14,
             title: "Em và Trịnh",
             year: 2022,
             description: "Bộ phim tái hiện cuộc đời và những mối tình của nhạc sĩ Trịnh Công Sơn. Phim là bức tranh lãng mạn về âm nhạc, tình yêu và những nàng thơ đã đi qua cuộc đời ông.",
@@ -135,7 +214,7 @@ const mockData = {
             cast: "Avin Lu, Bùi Lan Hương, Hoàng Hà, Lan Thy"
         },
         {
-            id: 9,
+            id: 15,
             title: "Con Nhót Mót Chồng",
             year: 2023,
             description: "Câu chuyện hài hước và cảm động về Nhót, một người phụ nữ 'quá lứa' sống cùng người cha nghiện rượu. Hành trình tìm chồng của Nhót cũng là hành trình cô hàn gắn tình cảm với cha mình.",
@@ -149,7 +228,7 @@ const mockData = {
             cast: "Thu Trang, Thái Hòa, Tiến Luật"
         },
         {
-            id: 10,
+            id: 16,
             title: "Siêu Lừa Gặp Siêu Lầy",
             year: 2023,
             description: "Khoa, một tên lừa đảo, đến Phú Quốc với ý định lừa đảo. Anh gặp Tú, một tên lừa đảo 'lầy lội' khác. Cả hai hợp tác trong nhiều phi vụ dở khóc dở cười trước khi đối mặt với một đối thủ lớn.",
@@ -161,6 +240,86 @@ const mockData = {
             genre: "Hài, Hành động",
             director: "Võ Thanh Hòa",
             cast: "Anh Tú, Mạc Văn Khoa, Ngọc Phước"
-        }
-    ]
+        },
+        {
+            id: 17,
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 18,
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 19,
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 20,
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 21,
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        {
+            id: 22,
+            title: "Tên phim mới",
+            year: 2025,
+            description: "Nội dung phim...",
+            imageUrl: "https://link-anh-poster.jpg",
+            trailerUrl: "https://www.youtube.com/embed/VIDEO_ID",
+            duration: "100 phút",
+            rating: "T13",                   // T13 / T16 / T18 / K
+            genre: "Hài, Gia đình",
+            director: "Tên đạo diễn",
+            cast: "Diễn viên 1, Diễn viên 2"
+        },
+        
+
+    ],
 };
