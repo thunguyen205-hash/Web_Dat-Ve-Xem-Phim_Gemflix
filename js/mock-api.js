@@ -11,7 +11,7 @@
     const API_BASE_URL_REMOTE = "http://gemflix.rf.gd/backend/api";
     const API_BASE_URL_LOCAL = "http://localhost/LT-Web_Dat-Ve-Xem-Phim/backend/api";
 
-    // Fallback movies in case mock-data.js fails to load
+    // Fallback movies in case mock-data.js fails to load — bao gồm TẤT CẢ phim (mới + thịnh hành)
     const initialMoviesFallback = [
         {
             id: 99,
@@ -21,82 +21,90 @@
             imageUrl: "https://imgchinhsachcuocsong.vnanet.vn/MediaUpload/Org/2025/07/23/204219-z6833331728306_9920591c2fadf96b8ec838e4967f44a4.jpg",
             bannerUrl: "https://imgchinhsachcuocsong.vnanet.vn/MediaUpload/Org/2025/07/23/204219-z6833331728306_9920591c2fadf96b8ec838e4967f44a4.jpg",
             trailerUrl: "https://www.youtube.com/embed/BD6PoZJdt_M",
-            duration: "120 phút",
-            rating: "T18",
-            genre: "Chiến tranh, Lịch sử",
-            director: "Nguyễn Quang Dũng",
-            cast: "Nhiều diễn viên trẻ",
-            release_date: "2025-07-23"
+            duration: "120 phút", rating: "T18", genre: "Chiến tranh, Lịch sử",
+            director: "Nguyễn Quang Dũng", cast: "Nhiều diễn viên trẻ", release_date: "2025-07-23"
         },
+        // --- Phim Mới (id 1-5) ---
         {
-            id: 1,
-            title: "Lật Mặt 7: Một Điều Ước",
-            year: 2024,
-            description: "Phim xoay quanh câu chuyện của bà Hai (Thanh Hiền) và bốn người con. Khi bà Hai không may gặp nạn, cần người chăm sóc, bốn người con đùn đẩy nhau. Câu chuyện đặt ra câu hỏi về lòng hiếu thảo và tình cảm gia đình.",
+            id: 1, title: "Lật Mặt 7: Một Điều Ước", year: 2024,
+            description: "Phim xoay quanh câu chuyện của bà Hai và bốn người con.",
             imageUrl: "https://photo-baomoi.bmcdn.me/w700_r1/2024_03_13_17_48553023/057ac6914bdda283fbcc.jpg",
             trailerUrl: "https://www.youtube.com/embed/d1ZHdosjNX8",
-            duration: "138 phút",
-            rating: "T13",
-            genre: "Gia đình, Chính kịch",
-            director: "Lý Hải",
-            cast: "Thanh Hiền, Trương Minh Cường, Đinh Y Nhung, Quách Ngọc Tuyên",
-            release_date: "2024-04-26"
+            duration: "138 phút", rating: "T13", genre: "Gia đình, Chính kịch",
+            director: "Lý Hải", cast: "Thanh Hiền, Trương Minh Cường", release_date: "2024-04-26"
         },
         {
-            id: 2,
-            title: "Gặp Lại Chị Bầu",
-            year: 2024,
-            description: "Phúc, một thanh niên có quá khứ bất hảo, cùng bạn bè lập nghiệp ở xóm trọ. Anh gặp Huyền, một cô gái tốt bụng. Tình yêu của họ nảy nở giữa những khó khăn, và bí mật về quá khứ của Huyền dần được hé lộ.",
+            id: 2, title: "Gặp Lại Chị Bầu", year: 2024,
+            description: "Phúc gặp Huyền, tình yêu nảy nở giữa những khó khăn.",
             imageUrl: "https://tse3.mm.bing.net/th/id/OIP.xrGKhbdzKrWVQ2urtnnk-AHaK_?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/8WS_CiekZLc",
-            duration: "110 phút",
-            rating: "T16",
-            genre: "Hài, Tình cảm",
-            director: "Nhất Trung",
-            cast: "Anh Tú, Diệu Nhi, Lê Giang, Ngọc Phước",
-            release_date: "2024-02-10"
+            duration: "110 phút", rating: "T16", genre: "Hài, Tình cảm",
+            director: "Nhất Trung", cast: "Anh Tú, Diệu Nhi, Lê Giang", release_date: "2024-02-10"
         },
         {
-            id: 3,
-            title: "Nhà Gia Tiên",
-            year: 2025,
-            description: "Câu chuyện về một gia đình gốc Việt tại Mỹ và những xung đột thế hệ. Phim khám phá sự khác biệt văn hóa, kỳ vọng của cha mẹ và ước mơ của con cái trong bối cảnh hiện đại.",
+            id: 3, title: "Nhà Gia Tiên", year: 2025,
+            description: "Câu chuyện gia đình gốc Việt tại Mỹ và xung đột thế hệ.",
             imageUrl: "https://st.download.com.vn/data/image/2025/02/14/nha-gia-tien.jpg",
             trailerUrl: "https://www.youtube.com/embed/aR2lnpCLqUk",
-            duration: "95 phút",
-            rating: "T13",
-            genre: "Gia đình, Hài",
-            director: "Trần Hữu Tấn",
-            cast: "Lê Khanh, Hồng Đào, Thái Hòa, Tuấn Trần",
-            release_date: "2025-02-14"
+            duration: "95 phút", rating: "T13", genre: "Gia đình, Hài",
+            director: "Trần Hữu Tấn", cast: "Lê Khanh, Hồng Đào, Thái Hòa", release_date: "2025-02-14"
         },
         {
-            id: 4,
-            title: "Thám Tử Kiên: Kỳ Án Không Đầu",
-            year: 2025,
-            description: "Một thám tử tư tài ba nhưng lập dị điều tra một vụ án mạng bí ẩn nơi nạn nhân bị mất đầu. Anh phải chạy đua với thời gian để tìm ra hung thủ trước khi hắn ra tay lần nữa.",
+            id: 4, title: "Thám Tử Kiên: Kỳ Án Không Đầu", year: 2025,
+            description: "Thám tử điều tra vụ án nạn nhân bị mất đầu bí ẩn.",
             imageUrl: "https://tse1.mm.bing.net/th/id/OIP.4HedOsPiqdgGJBNfuEHYUQHaKl?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/QiXNbEKF3U0",
-            duration: "115 phút",
-            rating: "T18",
-            genre: "Trinh thám, Kinh dị",
-            director: "Victor Vũ",
-            cast: "Hứa Vĩ Văn, Trúc Anh, Kaity Nguyễn",
-            release_date: "2025-03-05"
+            duration: "115 phút", rating: "T18", genre: "Trinh thám, Kinh dị",
+            director: "Victor Vũ", cast: "Hứa Vĩ Văn, Trúc Anh, Kaity Nguyễn", release_date: "2025-03-05"
         },
         {
-            id: 5,
-            title: "Nhà Bà Nữ",
-            year: 2023,
-            description: "Phim xoay quanh gia đình bà Nữ, chủ một quán bánh canh cua, và những mâu thuẫn thế hệ gay gắt. Câu chuyện khai thác áp lực gia đình, tình yêu và sự tha thứ.",
+            id: 5, title: "Nhà Bà Nữ", year: 2023,
+            description: "Gia đình bà Nữ và những mâu thuẫn thế hệ gay gắt.",
             imageUrl: "https://th.bing.com/th/id/R.4484bb72cef55c45590763e3d98772ed?rik=KN1P4v1nfCF6sA&pid=ImgRaw&r=0",
             trailerUrl: "https://www.youtube.com/embed/4peQFKutH34",
-            duration: "135 phút",
-            rating: "T16",
-            genre: "Chính kịch, Gia đình",
-            director: "Trấn Thành",
-            cast: "Trấn Thành, Lê Giang, Uyển Ân, Song Luân",
-            release_date: "2023-01-22"
+            duration: "135 phút", rating: "T16", genre: "Chính kịch, Gia đình",
+            director: "Trấn Thành", cast: "Trấn Thành, Lê Giang, Uyển Ân", release_date: "2023-01-22"
+        },
+        // --- Phim Thịnh Hành (id 6-10) ---
+        {
+            id: 6, title: "Lật Mặt 6: Tấm Vé Định Mệnh", year: 2023,
+            description: "Một nhóm bạn thân trúng số độc đắc, tấm vé kéo theo âm mưu và phản bội.",
+            imageUrl: "https://tse3.mm.bing.net/th/id/OIP.gwUCRkCrlItYPT7oEALsKAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
+            trailerUrl: "https://www.youtube.com/embed/ns9f92mR6bM",
+            duration: "132 phút", rating: "T18", genre: "Hành động, Giật gân",
+            director: "Lý Hải", cast: "Quốc Cường, Trung Dũng, Huy Khánh", release_date: "2023-04-28"
+        },
+        {
+            id: 7, title: "Đất Rừng Phương Nam", year: 2023,
+            description: "Hành trình cậu bé An đi tìm cha qua các tỉnh miền Tây Nam Bộ.",
+            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.fAgqmbugm7Fvfh9qY37GkwHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
+            trailerUrl: "https://www.youtube.com/embed/D0_w81Q-P3M",
+            duration: "110 phút", rating: "T13", genre: "Phiêu lưu, Gia đình",
+            director: "Nguyễn Quang Dũng", cast: "Hạo Khang, Trấn Thành, Tuấn Trần", release_date: "2023-10-19"
+        },
+        {
+            id: 8, title: "Em và Trịnh", year: 2022,
+            description: "Tái hiện cuộc đời và những mối tình của nhạc sĩ Trịnh Công Sơn.",
+            imageUrl: "https://tintuc-divineshop.cdn.vccloud.vn/wp-content/uploads/2022/06/review-em-va-trinh_62a329726ea9a.jpeg",
+            trailerUrl: "https://www.youtube.com/embed/zzik4JB9D1Q",
+            duration: "136 phút", rating: "T13", genre: "Tiểu sử, Lãng mạn",
+            director: "Phan Gia Nhật Linh", cast: "Avin Lu, Bùi Lan Hương, Hoàng Hà", release_date: "2022-06-17"
+        },
+        {
+            id: 9, title: "Con Nhót Mót Chồng", year: 2023,
+            description: "Hành trình tìm chồng hài hước của Nhót và hành trình hàn gắn với cha.",
+            imageUrl: "https://tse1.explicit.bing.net/th/id/OIP.ycZsFjfDFuRrzw-EGbeosAHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
+            trailerUrl: "https://www.youtube.com/embed/e7KHOQ-alqY",
+            duration: "90 phút", rating: "T16", genre: "Hài, Gia đình",
+            director: "Vũ Ngọc Đãng", cast: "Thu Trang, Thái Hòa, Tiến Luật", release_date: "2023-02-10"
+        },
+        {
+            id: 10, title: "Siêu Lừa Gặp Siêu Lầy", year: 2023,
+            description: "Hai tên lừa đảo gặp nhau và hợp tác trong những phi vụ dở khóc dở cười.",
+            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.wqDOC6JOXfblf2BIRrMLlQHaK4?rs=1&pid=ImgDetMain&o=7&rm=3",
+            trailerUrl: "https://www.youtube.com/embed/oNqD2HxBUq4",
+            duration: "112 phút", rating: "T16", genre: "Hài, Hành động",
+            director: "Võ Thanh Hòa", cast: "Anh Tú, Mạc Văn Khoa, Ngọc Phước", release_date: "2023-09-22"
         }
     ];
 
@@ -140,10 +148,10 @@
         if (storedMovies) {
             try {
                 const parsed = JSON.parse(storedMovies);
-                // If local storage has fewer movies than defaultMovies (cache outdated), reset it to load all movies
-                if (window.mockData && parsed.length < defaultMovies.length) {
+                // Reset cache nếu số lượng phim ít hơn expected (dù mockData có hay không)
+                const expectedCount = defaultMovies.length; // 11 phim
+                if (parsed.length < expectedCount) {
                     localStorage.setItem("mock_movies", JSON.stringify(defaultMovies));
-                    // Also clear cached showtimes to re-generate them for all movies
                     localStorage.removeItem("mock_showtimes");
                     return defaultMovies;
                 }
