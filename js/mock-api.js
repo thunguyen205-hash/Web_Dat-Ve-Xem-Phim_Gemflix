@@ -174,6 +174,10 @@
     
     // Generate mock showtimes dynamically if not set
     let showtimes = getLocalStorage("mock_showtimes", []);
+    if (showtimes.length > 0 && showtimes[0].show_time.split(':').length === 3) {
+        localStorage.removeItem("mock_showtimes");
+        showtimes = [];
+    }
     if (showtimes.length === 0) {
         // Wait for window.mockData to be ready (it will be loaded synchronously after script execution)
         window.addEventListener('DOMContentLoaded', () => {
@@ -182,7 +186,7 @@
             if (showtimesData.length === 0 && activeMovies.length > 0) {
                 let idCounter = 1;
                 const rooms = ["Phòng chiếu 1", "Phòng chiếu 2", "Phòng chiếu 3", "Phòng chiếu IMAX"];
-                const times = ["09:00:00", "12:30:00", "15:00:00", "18:30:00", "21:15:00"];
+                const times = ["09:00", "12:00", "15:00", "18:00", "19:30", "21:00"];
                 
                 activeMovies.forEach(m => {
                     for (let dayOffset = 0; dayOffset < 3; dayOffset++) {
