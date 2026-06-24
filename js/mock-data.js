@@ -79,7 +79,7 @@ const mockData = {
             title: "Nhà Bà Nữ",
             year: 2023,
             description: "Phim xoay quanh gia đình bà Nữ, chủ một quán bánh canh cua, và những mâu thuẫn thế hệ gay gắt. Câu chuyện khai thác áp lực gia đình, tình yêu và sự tha thứ.",
-            imageUrl: "https://cjhkentertainment.com/wp-content/uploads/2023/05/2301_NBN.jpg",
+            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.0et2-sBhpgAZnwWjU3oG0AHaLG?pid=Api&P=0&h=180",
             trailerUrl: "https://www.youtube.com/embed/4peQFKutH34",
             // Dữ liệu mới
             duration: "135 phút",
