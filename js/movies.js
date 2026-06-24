@@ -37,10 +37,28 @@ async function renderSearchResults() {
         const res = await fetch(`${API_BASE_URL}/movies/list.php`);
         const allMovies = await res.json();
 
-        // 3. Lọc phim theo từ khóa (Client-side filtering cho đơn giản)
-        const filtered = q === '' 
-            ? allMovies 
-            : allMovies.filter(m => m.title.toLowerCase().includes(q));
+        // 3. Lọc phim theo phân loại và từ khóa (Client-side filtering)
+        const type = (params.get('type') || '').trim().toLowerCase();
+        let filtered = allMovies;
+        
+        if (type === 'showing') {
+            filtered = allMovies.filter(m => m.year <= 2024);
+            title.textContent = 'Phim Đang Chiếu';
+        } else if (type === 'upcoming') {
+            filtered = allMovies.filter(m => m.year >= 2025);
+            title.textContent = 'Phim Sắp Chiếu';
+        } else if (type === 'trending') {
+            filtered = allMovies.filter(m => m.id > 5 && m.id !== 99);
+            title.textContent = 'Phim Thịnh Hành';
+        } else if (type === 'new') {
+            filtered = allMovies.filter(m => m.id <= 5);
+            title.textContent = 'Phim Mới Cập Nhật';
+        }
+
+        if (q !== '') {
+            filtered = filtered.filter(m => m.title.toLowerCase().includes(q));
+            title.textContent = `Kết quả tìm kiếm cho "${q}"`;
+        }
 
         if (filtered.length === 0) {
             container.innerHTML = '<p>Không tìm thấy kết quả nào.</p>';

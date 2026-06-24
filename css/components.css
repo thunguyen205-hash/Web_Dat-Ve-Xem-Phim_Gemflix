@@ -302,3 +302,42 @@
     align-items: center;
     padding: 5px;
 }
+
+/* Navigation Dropdown for Phim */
+.main-nav li {
+    position: relative;
+}
+
+.main-nav .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--light-dark-color);
+    border: 1px solid var(--grey-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    min-width: 160px;
+    z-index: 101;
+    overflow: hidden;
+}
+
+.main-nav .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.main-nav .dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.main-nav li.dropdown:hover .dropdown-content {
+    display: block;
+}

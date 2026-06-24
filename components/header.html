@@ -3,9 +3,15 @@
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="movies.html">Phim Lẻ</a></li>
-            <li><a href="movies.html">Phim Bộ</a></li>
-            <li><a href="movies.html">Mới & Phổ Biến</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Phim <i class="fa-solid fa-chevron-down" style="font-size:0.75rem; margin-left:4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="movies.html?type=showing">Phim Đang Chiếu</a>
+                    <a href="movies.html?type=upcoming">Phim Sắp Chiếu</a>
+                </div>
+            </li>
+            <li><a href="movies.html?type=trending">Phim Thịnh Hành</a></li>
+            <li><a href="movies.html?type=new">Phim Mới Cập nhật</a></li>
         </ul>
     </nav>
     
