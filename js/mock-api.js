@@ -388,20 +388,29 @@
                     if (!activeBookedSeats[showtimeId]) {
                         activeBookedSeats[showtimeId] = [];
                     }
-                    activeBookedSeats[showtimeId] = [...activeBookedSeats[showtimeId], ...body.seat_ids];
+                    
+                    const seatIds = body.seats || body.seat_ids || [];
+                    activeBookedSeats[showtimeId] = [...activeBookedSeats[showtimeId], ...seatIds];
                     setLocalStorage("mock_booked_seats", activeBookedSeats);
 
                     const randCode = "GF" + Math.floor(100000 + Math.random() * 900000);
                     const dateStr = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
+                    // Get showtime details from mock database
+                    const activeShowtimes = getLocalStorage("mock_showtimes", showtimes);
+                    const st = activeShowtimes.find(s => s.id === parseInt(body.showtime_id));
+                    const mTitle = st ? st.movie_title : "Phim Điện Ảnh";
+                    const sTime = st ? `${st.show_time.substring(0, 5)} - ${st.show_date}` : "18:00";
+                    const rRoom = st ? st.room_name : "Phòng chiếu 3";
+
                     const newBooking = {
                         booking_code: randCode,
-                        movie_title: body.movie_title || "Phim Điện Ảnh",
+                        movie_title: mTitle,
                         seats: body.seat_labels || "Ghế",
                         created_at: dateStr,
                         total: body.total_amount.toLocaleString('vi-VN') + " VND",
-                        show_time: body.show_time || "18:00",
-                        cinema_room: "Phòng chiếu 3"
+                        show_time: sTime,
+                        cinema_room: rRoom
                     };
 
                     activeBookings.unshift(newBooking);
