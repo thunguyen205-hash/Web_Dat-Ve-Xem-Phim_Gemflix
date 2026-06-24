@@ -77,13 +77,6 @@ npx serve
 ```
 Mở trình duyệt: `http://localhost:3000`
 
-### Cách 3: Dùng XAMPP / WAMP
-1. Move/Clone thư mục dự án vào thư mục web gốc (`htdocs` đối với XAMPP).
-2. Mở XAMPP Control Panel, nhấn **Start** module **Apache**.
-3. Mở trình duyệt: `http://localhost/Web_Dat-Ve-Xem-Phim_Gemflix/index.html`
-
----
-
 ## Cơ sở dữ liệu và API 
 
 Hệ thống hoạt động hoàn toàn offline ở phía Client. Không cần MySQL hay PHP.
