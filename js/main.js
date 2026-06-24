@@ -91,8 +91,8 @@ function updateHeaderUI(user) {
 
 async function loadBanner() {
     try {
-        // Lấy phim ID = 1 làm banner
-        const res = await fetch(`${API_BASE_URL}/movies/detail.php?id=1`);
+        // Lấy phim ID = 99 (Mưa Đỏ) làm banner — khớp với mock-data.js
+        const res = await fetch(`${API_BASE_URL}/movies/detail.php?id=99`);
         if (!res.ok) return;
         const movie = await res.json();
         populateBannerData(movie);
