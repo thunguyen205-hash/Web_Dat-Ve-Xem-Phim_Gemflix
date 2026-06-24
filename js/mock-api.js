@@ -12,7 +12,7 @@
     const API_BASE_URL_LOCAL = "http://localhost/LT-Web_Dat-Ve-Xem-Phim/backend/api";
 
     // === CACHE VERSION: Tăng số này lên mỗi khi cập nhật dữ liệu phim ===
-    const CACHE_VERSION = '3';
+    const CACHE_VERSION = '4';
     if (localStorage.getItem('mock_cache_version') !== CACHE_VERSION) {
         localStorage.removeItem('mock_movies');
         localStorage.removeItem('mock_showtimes');
