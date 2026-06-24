@@ -1,5 +1,5 @@
 // ======================= CONFIG API ==========================
-const API_BASE_URL = "http://gemflix.rf.gd/api";
+const API_BASE_URL = "http://gemflix.rf.gd/backend/api";
 
 // ======================= MAIN APP ============================
 document.addEventListener("DOMContentLoaded", async () => {

@@ -77,7 +77,7 @@ Trang quản trị (Admin):
 http://127.0.0.1:5500/admin/
 ```
 
-> **Lưu ý**: Hiện tại toàn bộ mã nguồn đang trỏ tới đường dẫn API cục bộ (`http://localhost/api`). Để website hoạt động đầy đủ tính năng, bạn cần thiết lập và chạy hệ thống xử lý dữ liệu (Backend) thông qua XAMPP trên máy tính của bạn cùng với cơ sở dữ liệu.
+> **Lưu ý**: Hiện tại toàn bộ mã nguồn đang trỏ tới đường dẫn API cục bộ (`http://gemflix.rf.gd/backend/api`). Để website hoạt động đầy đủ tính năng, bạn cần thiết lập và chạy hệ thống xử lý dữ liệu (Backend) thông qua XAMPP trên máy tính của bạn cùng với cơ sở dữ liệu.
 
 ---
 

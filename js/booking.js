@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://gemflix.rf.gd/api";
+const API_BASE_URL = "http://gemflix.rf.gd/backend/api";
 const SEAT_PRICE = 90000; 
 
 // --- DỮ LIỆU COMBO (Giả lập vì chưa có database bảng Combo) ---
