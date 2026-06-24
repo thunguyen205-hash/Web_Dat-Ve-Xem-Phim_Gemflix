@@ -4,12 +4,6 @@ Website đặt vé xem phim và quản trị rạp chiếu cho GemFlix. Dự án
 
 ---
 
-## Demo trực tuyến
-
-Hệ thống đang hoạt động và kết nối dữ liệu trực tiếp đến:
-**Máy chủ dữ liệu**: `http://gemflix.rf.gd/api`
-
----
 
 ## Mục lục
 - [Tính năng chính](#tính-năng-chính)
@@ -83,7 +77,7 @@ Trang quản trị (Admin):
 http://127.0.0.1:5500/admin/
 ```
 
-> **Lưu ý**: Website đã được kết nối với hệ thống máy chủ dữ liệu từ xa (`http://gemflix.rf.gd/api`). Bạn không cần cài đặt cơ sở dữ liệu nội bộ trên máy tính của mình.
+> **Lưu ý**: Hiện tại toàn bộ mã nguồn đang trỏ tới đường dẫn API cục bộ (`http://localhost/api`). Để website hoạt động đầy đủ tính năng, bạn cần thiết lập và chạy hệ thống xử lý dữ liệu (Backend) thông qua XAMPP trên máy tính của bạn cùng với cơ sở dữ liệu.
 
 ---
 
@@ -105,7 +99,7 @@ http://127.0.0.1:5500/admin/
 
 ## Tài khoản demo
 
-Hệ thống đã có sẵn cơ sở dữ liệu trên máy chủ. Bạn có thể tự **Đăng ký** một tài khoản người dùng mới và trải nghiệm luồng đặt vé.
+Sau khi thiết lập cơ sở dữ liệu nội bộ ở máy bạn, bạn có thể tự **Đăng ký** một tài khoản người dùng mới và trải nghiệm luồng đặt vé.
 
 - **Đăng nhập khách hàng:** Tại trang chủ -> Nhấn "Đăng nhập"
 - **Đăng nhập Admin:** Điều hướng tới thư mục `/admin/` trên URL để truy cập bảng điều khiển quản trị.
