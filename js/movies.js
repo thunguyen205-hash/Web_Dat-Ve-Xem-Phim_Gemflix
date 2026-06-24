@@ -45,23 +45,23 @@ async function renderSearchResults() {
         let filtered = allMovies.filter(m => m.id !== 99); // Loại banner
 
         if (type === 'showing') {
-            filtered = allMovies.filter(m => m.id !== 99 && m.year <= 2024);
+            filtered = allMovies.filter(m => m.id !== 99 && m.year <= 2025);
             title.textContent = 'Phim Đang Chiếu';
         } else if (type === 'upcoming') {
-            filtered = allMovies.filter(m => m.id !== 99 && m.year >= 2025);
+            filtered = allMovies.filter(m => m.id !== 99 && m.year >= 2026);
             title.textContent = 'Phim Sắp Chiếu';
         } else if (type === 'trending') {
             // Lấy ID từ danh sách trendingMovies trong mockData nếu có
             const trendingIds = window.mockData ? window.mockData.trendingMovies.map(m => m.id) : [];
             filtered = trendingIds.length > 0
-                ? allMovies.filter(m => trendingIds.includes(m.id))
+                ? trendingIds.map(id => allMovies.find(m => m.id === id)).filter(Boolean)
                 : allMovies.filter(m => m.id > 5 && m.id !== 99);
             title.textContent = 'Phim Thịnh Hành';
         } else if (type === 'new') {
             // Lấy ID từ danh sách newMovies trong mockData nếu có
             const newIds = window.mockData ? window.mockData.newMovies.map(m => m.id) : [];
             filtered = newIds.length > 0
-                ? allMovies.filter(m => newIds.includes(m.id))
+                ? newIds.map(id => allMovies.find(m => m.id === id)).filter(Boolean)
                 : allMovies.filter(m => m.id <= 5);
             title.textContent = 'Phim Mới Cập Nhật';
         } else if (!q) {
