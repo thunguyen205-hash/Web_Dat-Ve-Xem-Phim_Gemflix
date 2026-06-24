@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function renderSearchResults() {
     try {
+        // Xóa cache cũ để luôn load dữ liệu mới nhất từ mock-data.js
+        localStorage.removeItem('mock_movies');
+
         const params = new URLSearchParams(window.location.search);
         const q = (params.get('q') || '').trim().toLowerCase();
 
@@ -39,20 +42,31 @@ async function renderSearchResults() {
 
         // 3. Lọc phim theo phân loại và từ khóa (Client-side filtering)
         const type = (params.get('type') || '').trim().toLowerCase();
-        let filtered = allMovies;
-        
+        let filtered = allMovies.filter(m => m.id !== 99); // Loại banner
+
         if (type === 'showing') {
-            filtered = allMovies.filter(m => m.year <= 2024);
+            filtered = allMovies.filter(m => m.id !== 99 && m.year <= 2024);
             title.textContent = 'Phim Đang Chiếu';
         } else if (type === 'upcoming') {
-            filtered = allMovies.filter(m => m.year >= 2025);
+            filtered = allMovies.filter(m => m.id !== 99 && m.year >= 2025);
             title.textContent = 'Phim Sắp Chiếu';
         } else if (type === 'trending') {
-            filtered = allMovies.filter(m => m.id > 5 && m.id !== 99);
+            // Lấy ID từ danh sách trendingMovies trong mockData nếu có
+            const trendingIds = window.mockData ? window.mockData.trendingMovies.map(m => m.id) : [];
+            filtered = trendingIds.length > 0
+                ? allMovies.filter(m => trendingIds.includes(m.id))
+                : allMovies.filter(m => m.id > 5 && m.id !== 99);
             title.textContent = 'Phim Thịnh Hành';
         } else if (type === 'new') {
-            filtered = allMovies.filter(m => m.id <= 5);
+            // Lấy ID từ danh sách newMovies trong mockData nếu có
+            const newIds = window.mockData ? window.mockData.newMovies.map(m => m.id) : [];
+            filtered = newIds.length > 0
+                ? allMovies.filter(m => newIds.includes(m.id))
+                : allMovies.filter(m => m.id <= 5);
             title.textContent = 'Phim Mới Cập Nhật';
+        } else if (!q) {
+            // Không có filter -> hiển thị tất cả phim (trừ banner)
+            title.textContent = 'Tất cả phim';
         }
 
         if (q !== '') {
