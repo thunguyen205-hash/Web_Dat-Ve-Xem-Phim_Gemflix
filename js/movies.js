@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://gemflix.rf.gd/backend/api";
+const API_BASE_URL = "http://gemflix.rf.gd/api";
 
 document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([

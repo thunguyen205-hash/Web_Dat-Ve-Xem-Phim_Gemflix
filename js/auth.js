@@ -1,6 +1,6 @@
-/* === FILE: frontend/js/auth.js === */
+/* === FILE: js/auth.js === */
 
-const API_AUTH_URL = "http://gemflix.rf.gd/backend/api/auth";
+const API_AUTH_URL = "http://gemflix.rf.gd/api/auth";
 
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Setup các hiệu ứng giao diện (luôn chạy)
