@@ -373,7 +373,7 @@
             try {
                 const parsed = JSON.parse(storedMovies);
                 // Reset cache nếu số lượng phim ít hơn expected (dù mockData có hay không)
-                const expectedCount = defaultMovies.length; // 11 phim
+                const expectedCount = defaultMovies.length; // 22 phim
                 if (parsed.length < expectedCount) {
                     localStorage.setItem("mock_movies", JSON.stringify(defaultMovies));
                     localStorage.removeItem("mock_showtimes");
@@ -395,7 +395,7 @@
     let bookings = getLocalStorage("mock_bookings", [
         {
             booking_code: "GF984210",
-            movie_title: "Lật Mặt 7: Một Điều Ước",
+            movie_title: "Song Hỷ Lâm Môn",
             seats: "A3, A4",
             created_at: "2026-06-24 10:15:30",
             total: "180.000 VND",
@@ -539,9 +539,9 @@
                 const activeMovies = getActiveMovies();
                 
                 if (type === 'new') {
-                    responseData = activeMovies.filter(m => m.id !== 99).slice(0, 5);
+                    responseData = activeMovies.filter(m => m.id !== 99).slice(0, 11);
                 } else if (type === 'trending') {
-                    responseData = activeMovies.filter(m => m.id !== 99).slice(5, 10);
+                    responseData = activeMovies.filter(m => m.id !== 99).slice(11, 22);
                 } else {
                     responseData = activeMovies;
                 }
