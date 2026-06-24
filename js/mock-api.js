@@ -12,7 +12,7 @@
     const API_BASE_URL_LOCAL = "http://localhost/LT-Web_Dat-Ve-Xem-Phim/backend/api";
 
     // === CACHE VERSION: Tăng số này lên mỗi khi cập nhật dữ liệu phim ===
-    const CACHE_VERSION = '4';
+    const CACHE_VERSION = '5';
     if (localStorage.getItem('mock_cache_version') !== CACHE_VERSION) {
         localStorage.removeItem('mock_movies');
         localStorage.removeItem('mock_showtimes');
@@ -409,9 +409,19 @@
                 const activeMovies = getActiveMovies();
                 
                 if (type === 'new') {
-                    responseData = activeMovies.filter(m => m.id !== 99).slice(0, 11);
+                    if (typeof window !== 'undefined' && window.mockData) {
+                        const newIds = window.mockData.newMovies.map(m => m.id);
+                        responseData = activeMovies.filter(m => newIds.includes(m.id));
+                    } else {
+                        responseData = activeMovies.filter(m => m.id !== 99).slice(0, 6);
+                    }
                 } else if (type === 'trending') {
-                    responseData = activeMovies.filter(m => m.id !== 99).slice(11, 22);
+                    if (typeof window !== 'undefined' && window.mockData) {
+                        const trendIds = window.mockData.trendingMovies.map(m => m.id);
+                        responseData = activeMovies.filter(m => trendIds.includes(m.id));
+                    } else {
+                        responseData = activeMovies.filter(m => m.id !== 99).slice(6, 12);
+                    }
                 } else {
                     responseData = activeMovies;
                 }
