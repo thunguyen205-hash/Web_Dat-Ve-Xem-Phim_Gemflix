@@ -135,7 +135,26 @@
         const defaultMovies = window.mockData ? 
             [window.mockData.banner, ...window.mockData.newMovies, ...window.mockData.trendingMovies] : 
             initialMoviesFallback;
-        return getLocalStorage("mock_movies", defaultMovies);
+        
+        let storedMovies = localStorage.getItem("mock_movies");
+        if (storedMovies) {
+            try {
+                const parsed = JSON.parse(storedMovies);
+                // If local storage has fewer movies than defaultMovies (cache outdated), reset it to load all movies
+                if (window.mockData && parsed.length < defaultMovies.length) {
+                    localStorage.setItem("mock_movies", JSON.stringify(defaultMovies));
+                    // Also clear cached showtimes to re-generate them for all movies
+                    localStorage.removeItem("mock_showtimes");
+                    return defaultMovies;
+                }
+                return parsed;
+            } catch(e) {
+                return defaultMovies;
+            }
+        } else {
+            localStorage.setItem("mock_movies", JSON.stringify(defaultMovies));
+            return defaultMovies;
+        }
     }
 
     // Initialize databases
