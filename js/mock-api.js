@@ -139,8 +139,7 @@
 
     const initialUsers = [
         { id: 1, username: "admin", email: "admin@gmail.com", role: "admin", total_bookings: 3, total_spent: 1200000 },
-        { id: 2, username: "Thư Nguyễn", email: "thu@gmail.com", role: "user", total_bookings: 1, total_spent: 90000 },
-        { id: 3, username: "Gia Bảo", email: "bao@gmail.com", role: "user", total_bookings: 0, total_spent: 0 }
+        { id: 2, username: "Thư Nguyễn", email: "thu@gmail.com", role: "user", total_bookings: 1, total_spent: 90000 }
     ];
 
     const initialVouchers = [
