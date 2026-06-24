@@ -45,6 +45,47 @@
     color: var(--grey-color);
 }
 
+/* --- Dropdown Menu --- */
+.main-nav .dropdown {
+    position: relative;
+}
+
+.main-nav .dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.97);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    min-width: 180px;
+    z-index: 200;
+    padding: 6px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.main-nav .dropdown-content a {
+    display: block;
+    padding: 10px 18px;
+    color: var(--light-color);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+}
+
+.main-nav .dropdown-content a:hover {
+    background-color: rgba(255,255,255,0.08);
+    color: var(--primary-color);
+}
+
+.main-nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-nav .dropbtn {
+    cursor: pointer;
+}
+
 /* MỚI: Wrapper cho các item bên phải */
 .header-right {
     display: flex;
