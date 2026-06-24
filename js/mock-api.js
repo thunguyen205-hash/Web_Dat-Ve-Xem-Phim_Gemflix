@@ -1,11 +1,18 @@
 // State-preserving Mock API for GemFlix
 // Intercepts fetch calls to http://gemflix.rf.gd/backend/api and local path backend API
 (function () {
+    // 1. Dynamically load the user's original mock-data.js synchronously
+    const currentScript = document.currentScript;
+    if (currentScript) {
+        const dataScriptUrl = currentScript.src.replace('mock-api.js', 'mock-data.js');
+        document.write('<script src="' + dataScriptUrl + '"><\/script>');
+    }
+
     const API_BASE_URL_REMOTE = "http://gemflix.rf.gd/backend/api";
     const API_BASE_URL_LOCAL = "http://localhost/LT-Web_Dat-Ve-Xem-Phim/backend/api";
 
-    // 1. Initial Mock Data Definition
-    const initialMovies = [
+    // Fallback movies in case mock-data.js fails to load
+    const initialMoviesFallback = [
         {
             id: 99,
             title: "Mưa Đỏ",
@@ -90,76 +97,6 @@
             director: "Trấn Thành",
             cast: "Trấn Thành, Lê Giang, Uyển Ân, Song Luân",
             release_date: "2023-01-22"
-        },
-        {
-            id: 6,
-            title: "Lật Mặt 6: Tấm Vé Định Mệnh",
-            year: 2023,
-            description: "Một nhóm bạn thân trúng số độc đắc. Tấm vé đã thay đổi cuộc đời họ, nhưng cũng kéo theo những âm mưu, sự phản bội và cái chết. Tình bạn của họ bị thử thách bởi lòng tham.",
-            imageUrl: "https://tse3.mm.bing.net/th/id/OIP.gwUCRkCrlItYPT7oEALsKAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
-            trailerUrl: "https://www.youtube.com/embed/ns9f92mR6bM",
-            duration: "132 phút",
-            rating: "T18",
-            genre: "Hành động, Giật gân",
-            director: "Lý Hải",
-            cast: "Quốc Cường, Trung Dũng, Huy Khánh, Thanh Thức",
-            release_date: "2023-04-28"
-        },
-        {
-            id: 7,
-            title: "Đất Rừng Phương Nam",
-            year: 2023,
-            description: "Phiên bản điện ảnh kể về hành trình phiêu lưu của cậu bé An đi tìm cha qua các tỉnh miền Tây Nam Bộ trong thời kỳ kháng chiến chống Pháp. Phim tái hiện vẻ đẹp hùng vĩ của thiên nhiên và con người nơi đây.",
-            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.fAgqmbugm7Fvfh9qY37GkwHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
-            trailerUrl: "https://www.youtube.com/embed/D0_w81Q-P3M",
-            duration: "110 phút",
-            rating: "T13",
-            genre: "Phiêu lưu, Gia đình",
-            director: "Nguyễn Quang Dũng",
-            cast: "Hạo Khang, Trấn Thành, Tuấn Trần, Hồng Ánh",
-            release_date: "2023-10-20"
-        },
-        {
-            id: 8,
-            title: "Em và Trịnh",
-            year: 2022,
-            description: "Bộ phim tái hiện cuộc đời và những mối tình của nhạc sĩ Trịnh Công Sơn. Phim là bức tranh lãng mạn về âm nhạc, tình yêu và những nàng thơ đã đi qua cuộc đời ông.",
-            imageUrl: "https://tintuc-divineshop.cdn.vccloud.vn/wp-content/uploads/2022/06/review-em-va-trinh_62a329726ea9a.jpeg",
-            trailerUrl: "https://www.youtube.com/embed/zzik4JB9D1Q",
-            duration: "136 phút",
-            rating: "T13",
-            genre: "Tiểu sử, Lãng mạn",
-            director: "Phan Gia Nhật Linh",
-            cast: "Avin Lu, Bùi Lan Hương, Hoàng Hà, Lan Thy",
-            release_date: "2022-06-17"
-        },
-        {
-            id: 9,
-            title: "Con Nhót Mót Chồng",
-            year: 2023,
-            description: "Câu chuyện hài hước và cảm động về Nhót, một người phụ nữ 'quá lứa' sống cùng người cha nghiện rượu. Hành trình tìm chồng của Nhót cũng là hành trình cô hàn gắn tình cảm với cha mình.",
-            imageUrl: "https://tse1.explicit.bing.net/th/id/OIP.ycZsFjfDFuRrzw-EGbeosAHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
-            trailerUrl: "https://www.youtube.com/embed/e7KHOQ-alqY",
-            duration: "90 phút",
-            rating: "T16",
-            genre: "Hài, Gia đình",
-            director: "Vũ Ngọc Đãng",
-            cast: "Thu Trang, Thái Hòa, Tiến Luật",
-            release_date: "2023-04-28"
-        },
-        {
-            id: 10,
-            title: "Siêu Lừa Gặp Siêu Lầy",
-            year: 2023,
-            description: "Khoa, một tên lừa đảo, đến Phú Quốc với ý định lừa đảo. Anh gặp Tú, một tên lừa đảo 'lầy lội' khác. Cả hai hợp tác trong nhiều phi vụ dở khóc dở cười trước khi đối mặt với một đối thủ lớn.",
-            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.wqDOC6JOXfblf2BIRrMLlQHaK4?rs=1&pid=ImgDetMain&o=7&rm=3",
-            trailerUrl: "https://www.youtube.com/embed/oNqD2HxBUq4",
-            duration: "112 phút",
-            rating: "T16",
-            genre: "Hài, Hành động",
-            director: "Võ Thanh Hòa",
-            cast: "Anh Tú, Mạc Văn Khoa, Ngọc Phước",
-            release_date: "2023-03-03"
         }
     ];
 
@@ -193,8 +130,15 @@
         localStorage.setItem(key, JSON.stringify(value));
     }
 
+    // Helper to get active movies from localStorage, falling back to mockData from mock-data.js
+    function getActiveMovies() {
+        const defaultMovies = window.mockData ? 
+            [window.mockData.banner, ...window.mockData.newMovies, ...window.mockData.trendingMovies] : 
+            initialMoviesFallback;
+        return getLocalStorage("mock_movies", defaultMovies);
+    }
+
     // Initialize databases
-    let movies = getLocalStorage("mock_movies", initialMovies);
     let users = getLocalStorage("mock_users", initialUsers);
     let vouchers = getLocalStorage("mock_vouchers", initialVouchers);
     let bookings = getLocalStorage("mock_bookings", [
@@ -212,32 +156,37 @@
     // Generate mock showtimes dynamically if not set
     let showtimes = getLocalStorage("mock_showtimes", []);
     if (showtimes.length === 0) {
-        // Create standard showtimes for all movies for today and next 3 days
-        let idCounter = 1;
-        const rooms = ["Phòng chiếu 1", "Phòng chiếu 2", "Phòng chiếu 3", "Phòng chiếu IMAX"];
-        const times = ["09:00:00", "12:30:00", "15:00:00", "18:30:00", "21:15:00"];
-        
-        movies.forEach(m => {
-            // Generate for today and next 2 days
-            for (let dayOffset = 0; dayOffset < 3; dayOffset++) {
-                const dateObj = new Date();
-                dateObj.setDate(dateObj.getDate() + dayOffset);
-                const dateStr = dateObj.toLocaleDateString('en-CA'); // YYYY-MM-DD
+        // Wait for window.mockData to be ready (it will be loaded synchronously after script execution)
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeMovies = getActiveMovies();
+            let showtimesData = getLocalStorage("mock_showtimes", []);
+            if (showtimesData.length === 0 && activeMovies.length > 0) {
+                let idCounter = 1;
+                const rooms = ["Phòng chiếu 1", "Phòng chiếu 2", "Phòng chiếu 3", "Phòng chiếu IMAX"];
+                const times = ["09:00:00", "12:30:00", "15:00:00", "18:30:00", "21:15:00"];
                 
-                times.forEach((time, index) => {
-                    showtimes.push({
-                        id: idCounter++,
-                        movie_id: m.id,
-                        movie_title: m.title,
-                        show_date: dateStr,
-                        show_time: time,
-                        room_name: rooms[(m.id + index + dayOffset) % rooms.length],
-                        price: 90000
-                    });
+                activeMovies.forEach(m => {
+                    for (let dayOffset = 0; dayOffset < 3; dayOffset++) {
+                        const dateObj = new Date();
+                        dateObj.setDate(dateObj.getDate() + dayOffset);
+                        const dateStr = dateObj.toLocaleDateString('en-CA');
+                        
+                        times.forEach((time, index) => {
+                            showtimesData.push({
+                                id: idCounter++,
+                                movie_id: m.id,
+                                movie_title: m.title,
+                                show_date: dateStr,
+                                show_time: time,
+                                room_name: rooms[(m.id + index + dayOffset) % rooms.length],
+                                price: 90000
+                            });
+                        });
+                    }
                 });
+                setLocalStorage("mock_showtimes", showtimesData);
             }
         });
-        setLocalStorage("mock_showtimes", showtimes);
     }
 
     let bookedSeats = getLocalStorage("mock_booked_seats", {
@@ -256,9 +205,7 @@
         if (isRemote || isLocal) {
             const apiBase = isRemote ? API_BASE_URL_REMOTE : API_BASE_URL_LOCAL;
             const url = new URL(urlStr);
-            // Replace matching part to get endpoint path
             let path = urlStr.substring(apiBase.length);
-            // Strip any query params from path for checking startsWith
             const questionIdx = path.indexOf('?');
             const cleanPath = questionIdx !== -1 ? path.substring(0, questionIdx) : path;
 
@@ -311,7 +258,6 @@
                         localStorage.setItem('mockLoggedInUser', JSON.stringify(adminUser));
                         responseData = { status: 'success', message: 'Đăng nhập thành công', user: adminUser };
                     } else {
-                        // Create user auto
                         const newUser = {
                             id: activeUsers.length + 1,
                             username: email.split('@')[0],
@@ -362,7 +308,7 @@
             }
             else if (cleanPath.startsWith('/movies/list.php')) {
                 const type = url.searchParams.get('type');
-                const activeMovies = getLocalStorage("mock_movies", initialMovies);
+                const activeMovies = getActiveMovies();
                 
                 if (type === 'new') {
                     responseData = activeMovies.filter(m => m.id !== 99).slice(0, 5);
@@ -374,7 +320,7 @@
             } 
             else if (cleanPath.startsWith('/movies/detail.php')) {
                 const id = parseInt(url.searchParams.get('id'));
-                const activeMovies = getLocalStorage("mock_movies", initialMovies);
+                const activeMovies = getActiveMovies();
                 const movie = activeMovies.find(m => m.id === id);
                 responseData = movie || activeMovies[0];
             }
@@ -497,7 +443,7 @@
             // ADMIN ROUTES
             else if (cleanPath.startsWith('/admin/dashboard_stats.php')) {
                 const activeBookings = getLocalStorage("mock_bookings", bookings);
-                const activeMovies = getLocalStorage("mock_movies", initialMovies);
+                const activeMovies = getActiveMovies();
                 
                 let rev = 0;
                 activeBookings.forEach(b => {
@@ -527,7 +473,7 @@
                 try {
                     const body = JSON.parse(init.body);
                     const activeShowtimes = getLocalStorage("mock_showtimes", showtimes);
-                    const activeMovies = getLocalStorage("mock_movies", initialMovies);
+                    const activeMovies = getActiveMovies();
                     const movie = activeMovies.find(m => m.id === parseInt(body.movie_id));
 
                     const newSt = {
@@ -564,7 +510,7 @@
             else if (cleanPath.startsWith('/movies/create.php')) {
                 try {
                     const body = JSON.parse(init.body);
-                    const activeMovies = getLocalStorage("mock_movies", initialMovies);
+                    const activeMovies = getActiveMovies();
                     
                     const newMov = {
                         id: activeMovies.length > 0 ? Math.max(...activeMovies.map(m=>m.id)) + 1 : 1,
@@ -590,7 +536,7 @@
             else if (cleanPath.startsWith('/movies/update.php')) {
                 try {
                     const body = JSON.parse(init.body);
-                    const activeMovies = getLocalStorage("mock_movies", initialMovies);
+                    const activeMovies = getActiveMovies();
                     const mIndex = activeMovies.findIndex(m => m.id === parseInt(body.id));
                     
                     if (mIndex !== -1) {
@@ -620,7 +566,7 @@
             else if (cleanPath.startsWith('/movies/delete.php')) {
                 try {
                     const body = JSON.parse(init.body);
-                    let activeMovies = getLocalStorage("mock_movies", initialMovies);
+                    let activeMovies = getActiveMovies();
                     activeMovies = activeMovies.filter(m => m.id !== parseInt(body.id));
                     setLocalStorage("mock_movies", activeMovies);
                     responseData = { status: 'success', message: 'Xóa phim thành công!' };
