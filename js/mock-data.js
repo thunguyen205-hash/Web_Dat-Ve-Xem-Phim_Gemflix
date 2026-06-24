@@ -106,7 +106,7 @@ const mockData = {
             title: "Con Kể Ba Nghe",
             year: 2026,
             description: "Con Kể Ba Nghe theo chân một nghệ sĩ xiếc đi trên dây và cậu con trai khép kín trong hành trình tìm lại sự kết nối đã đánh mất. Giữa ánh đèn rực rỡ nhưng đầy mong manh của sân khấu xiếc, hai cha con dần mở lòng, chữa lành những tổn thương cũ.",
-            imageUrl: "https://tse2.mm.bing.net/th/id/OIP.PxqIIcXDFB9WkMRzie-5hAHaJQ?pid=Api&P=0&h=180",
+            imageUrl: "https://tse1.mm.bing.net/th/id/OIP.t4EU-lTeF028S7UyBDpMkwHaEK?pid=Api&P=0&h=180",
             trailerUrl: "https://www.youtube.com/embed/8QYwOWO4jCQ",
             duration: "111 phút",
             rating: "T13",                   
