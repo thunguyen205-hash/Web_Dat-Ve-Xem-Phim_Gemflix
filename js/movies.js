@@ -82,7 +82,7 @@ async function renderSearchResults() {
         // 4. Render ra màn hình
         let html = '';
         filtered.forEach(m => {
-            const year = m.release_date ? m.release_date.split('-')[0] : '2025';
+            const year = m.year ? m.year : (m.release_date ? m.release_date.split('-')[0] : '2025');
             html += cardTemplate
                 .replace(/{id}/g, m.id)
                 .replace(/{trailerUrl}/g, m.trailerUrl || '')

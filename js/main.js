@@ -145,7 +145,7 @@ function renderGrid(elementId, movies, template) {
     }
 
     container.innerHTML = movies.map(m => {
-        const year = m.release_date ? m.release_date.split('-')[0] : '2025';
+        const year = m.year ? m.year : (m.release_date ? m.release_date.split('-')[0] : '2025');
         return template
             .replace(/{id}/g, m.id)
             .replace(/{imageUrl}/g, m.imageUrl)
