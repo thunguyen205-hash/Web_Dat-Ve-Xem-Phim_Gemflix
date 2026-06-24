@@ -343,9 +343,9 @@
                 const activeMovies = getActiveMovies();
                 
                 if (type === 'new') {
-                    responseData = activeMovies.filter(m => m.id !== 99).slice(0, 5);
+                    responseData = activeMovies.filter(m => m.id !== 99).slice(0, 10);
                 } else if (type === 'trending') {
-                    responseData = activeMovies.filter(m => m.id !== 99).slice(5, 10);
+                    responseData = activeMovies.filter(m => m.id !== 99).slice(10, 20);
                 } else {
                     responseData = activeMovies;
                 }
