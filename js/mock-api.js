@@ -26,87 +26,108 @@
         },
         // --- Phim Mới (id 1-5) ---
         {
-            id: 1, title: "Lật Mặt 7: Một Điều Ước", year: 2024,
-            description: "Phim xoay quanh câu chuyện của bà Hai và bốn người con.",
+            id: 1,
+            title: "Lật Mặt 7: Một Điều Ước",
+            year: 2024,
+            description: "Phim xoay quanh câu chuyện của bà Hai (Thanh Hiền) và bốn người con. Khi bà Hai không may gặp nạn, cần người chăm sóc, bốn người con đùn đẩy nhau. Câu chuyện đặt ra câu hỏi về lòng hiếu thảo và tình cảm gia đình.",
             imageUrl: "https://photo-baomoi.bmcdn.me/w700_r1/2024_03_13_17_48553023/057ac6914bdda283fbcc.jpg",
             trailerUrl: "https://www.youtube.com/embed/d1ZHdosjNX8",
             duration: "138 phút", rating: "T13", genre: "Gia đình, Chính kịch",
-            director: "Lý Hải", cast: "Thanh Hiền, Trương Minh Cường", release_date: "2024-04-26"
+            director: "Lý Hải", cast: "Thanh Hiền, Trương Minh Cường, Đinh Y Nhung, Quách Ngọc Tuyên", release_date: "2024-04-26"
         },
         {
-            id: 2, title: "Gặp Lại Chị Bầu", year: 2024,
-            description: "Phúc gặp Huyền, tình yêu nảy nở giữa những khó khăn.",
+            id: 2,
+            title: "Gặp Lại Chị Bầu",
+            year: 2024,
+            description: "Phúc, một thanh niên có quá khứ bất hảo, cùng bạn bè lập nghiệp ở xóm trọ. Anh gặp Huyền, một cô gái tốt bụng. Tình yêu của họ nảy nở giữa những khó khăn, và bí mật về quá khứ của Huyền dần được hé lộ.",
             imageUrl: "https://tse3.mm.bing.net/th/id/OIP.xrGKhbdzKrWVQ2urtnnk-AHaK_?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/8WS_CiekZLc",
             duration: "110 phút", rating: "T16", genre: "Hài, Tình cảm",
-            director: "Nhất Trung", cast: "Anh Tú, Diệu Nhi, Lê Giang", release_date: "2024-02-10"
+            director: "Nhất Trung", cast: "Anh Tú, Diệu Nhi, Lê Giang, Ngọc Phước", release_date: "2024-02-10"
         },
         {
-            id: 3, title: "Nhà Gia Tiên", year: 2025,
-            description: "Câu chuyện gia đình gốc Việt tại Mỹ và xung đột thế hệ.",
+            id: 3,
+            title: "Nhà Gia Tiên",
+            year: 2025,
+            description: "Câu chuyện về một gia đình gốc Việt tại Mỹ và những xung đột thế hệ. Phim khám phá sự khác biệt văn hóa, kỳ vọng của cha mẹ và ước mơ của con cái trong bối cảnh hiện đại.",
             imageUrl: "https://st.download.com.vn/data/image/2025/02/14/nha-gia-tien.jpg",
             trailerUrl: "https://www.youtube.com/embed/aR2lnpCLqUk",
             duration: "95 phút", rating: "T13", genre: "Gia đình, Hài",
-            director: "Trần Hữu Tấn", cast: "Lê Khanh, Hồng Đào, Thái Hòa", release_date: "2025-02-14"
+            director: "Trần Hữu Tấn", cast: "Lê Khanh, Hồng Đào, Thái Hòa, Tuấn Trần", release_date: "2025-02-14"
         },
         {
-            id: 4, title: "Thám Tử Kiên: Kỳ Án Không Đầu", year: 2025,
-            description: "Thám tử điều tra vụ án nạn nhân bị mất đầu bí ẩn.",
+            id: 4,
+            title: "Thám Tử Kiên: Kỳ Án Không Đầu",
+            year: 2025,
+            description: "Một thám tử tư tài ba nhưng lập dị điều tra một vụ án mạng bí ẩn nơi nạn nhân bị mất đầu. Anh phải chạy đua với thời gian để tìm ra hung thủ trước khi hắn ra tay lần nữa.",
             imageUrl: "https://tse1.mm.bing.net/th/id/OIP.4HedOsPiqdgGJBNfuEHYUQHaKl?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/QiXNbEKF3U0",
             duration: "115 phút", rating: "T18", genre: "Trinh thám, Kinh dị",
             director: "Victor Vũ", cast: "Hứa Vĩ Văn, Trúc Anh, Kaity Nguyễn", release_date: "2025-03-05"
         },
         {
-            id: 5, title: "Nhà Bà Nữ", year: 2023,
-            description: "Gia đình bà Nữ và những mâu thuẫn thế hệ gay gắt.",
+            id: 5,
+            title: "Nhà Bà Nữ",
+            year: 2023,
+            description: "Phim xoay quanh gia đình bà Nữ, chủ một quán bánh canh cua, và những mâu thuẫn thế hệ gay gắt. Câu chuyện khai thác áp lực gia đình, tình yêu và sự tha thứ.",
             imageUrl: "https://th.bing.com/th/id/R.4484bb72cef55c45590763e3d98772ed?rik=KN1P4v1nfCF6sA&pid=ImgRaw&r=0",
             trailerUrl: "https://www.youtube.com/embed/4peQFKutH34",
             duration: "135 phút", rating: "T16", genre: "Chính kịch, Gia đình",
-            director: "Trấn Thành", cast: "Trấn Thành, Lê Giang, Uyển Ân", release_date: "2023-01-22"
+            director: "Trấn Thành", cast: "Trấn Thành, Lê Giang, Uyển Ân, Song Luân", release_date: "2023-01-22"
         },
         // --- Phim Thịnh Hành (id 6-10) ---
         {
-            id: 6, title: "Lật Mặt 6: Tấm Vé Định Mệnh", year: 2023,
-            description: "Một nhóm bạn thân trúng số độc đắc, tấm vé kéo theo âm mưu và phản bội.",
+            id: 6,
+            title: "Lật Mặt 6: Tấm Vé Định Mệnh",
+            year: 2023,
+            description: "Một nhóm bạn thân trúng số độc đắc. Tấm vé đã thay đổi cuộc đời họ, nhưng cũng kéo theo những âm mưu, sự phản bội và cái chết. Tình bạn của họ bị thử thách bởi lòng tham.",
             imageUrl: "https://tse3.mm.bing.net/th/id/OIP.gwUCRkCrlItYPT7oEALsKAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/ns9f92mR6bM",
             duration: "132 phút", rating: "T18", genre: "Hành động, Giật gân",
-            director: "Lý Hải", cast: "Quốc Cường, Trung Dũng, Huy Khánh", release_date: "2023-04-28"
+            director: "Lý Hải", cast: "Quốc Cường, Trung Dũng, Huy Khánh, Thanh Thức", release_date: "2023-04-28"
         },
         {
-            id: 7, title: "Đất Rừng Phương Nam", year: 2023,
-            description: "Hành trình cậu bé An đi tìm cha qua các tỉnh miền Tây Nam Bộ.",
+            id: 7,
+            title: "Đất Rừng Phương Nam",
+            year: 2023,
+            description: "Phiên bản điện ảnh kể về hành trình phiêu lưu của cậu bé An đi tìm cha qua các tỉnh miền Tây Nam Bộ trong thời kỳ kháng chiến chống Pháp. Phim tái hiện vẻ đẹp hùng vĩ của thiên nhiên và con người nơi đây.",
             imageUrl: "https://tse1.mm.bing.net/th/id/OIP.fAgqmbugm7Fvfh9qY37GkwHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/D0_w81Q-P3M",
             duration: "110 phút", rating: "T13", genre: "Phiêu lưu, Gia đình",
-            director: "Nguyễn Quang Dũng", cast: "Hạo Khang, Trấn Thành, Tuấn Trần", release_date: "2023-10-19"
+            director: "Nguyễn Quang Dũng", cast: "Hạo Khang, Trấn Thành, Tuấn Trần, Hồng Ánh", release_date: "2023-10-19"
         },
         {
-            id: 8, title: "Em và Trịnh", year: 2022,
-            description: "Tái hiện cuộc đời và những mối tình của nhạc sĩ Trịnh Công Sơn.",
+            id: 8,
+            title: "Em và Trịnh",
+            year: 2022,
+            description: "Bộ phim tái hiện cuộc đời và những mối tình của nhạc sĩ Trịnh Công Sơn. Phim là bức tranh lãng mạn về âm nhạc, tình yêu và những nàng thơ đã đi qua cuộc đời ông.",
             imageUrl: "https://tintuc-divineshop.cdn.vccloud.vn/wp-content/uploads/2022/06/review-em-va-trinh_62a329726ea9a.jpeg",
             trailerUrl: "https://www.youtube.com/embed/zzik4JB9D1Q",
             duration: "136 phút", rating: "T13", genre: "Tiểu sử, Lãng mạn",
-            director: "Phan Gia Nhật Linh", cast: "Avin Lu, Bùi Lan Hương, Hoàng Hà", release_date: "2022-06-17"
+            director: "Phan Gia Nhật Linh", cast: "Avin Lu, Bùi Lan Hương, Hoàng Hà, Lan Thy", release_date: "2022-06-17"
         },
         {
-            id: 9, title: "Con Nhót Mót Chồng", year: 2023,
-            description: "Hành trình tìm chồng hài hước của Nhót và hành trình hàn gắn với cha.",
+            id: 9,
+            title: "Con Nhót Mót Chồng",
+            year: 2023,
+            description: "Câu chuyện hài hước và cảm động về Nhót, một người phụ nữ 'quá lứa' sống cùng người cha nghiện rượu. Hành trình tìm chồng của Nhót cũng là hành trình cô hàn gắn tình cảm với cha mình.",
             imageUrl: "https://tse1.explicit.bing.net/th/id/OIP.ycZsFjfDFuRrzw-EGbeosAHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/e7KHOQ-alqY",
             duration: "90 phút", rating: "T16", genre: "Hài, Gia đình",
             director: "Vũ Ngọc Đãng", cast: "Thu Trang, Thái Hòa, Tiến Luật", release_date: "2023-02-10"
         },
         {
-            id: 10, title: "Siêu Lừa Gặp Siêu Lầy", year: 2023,
-            description: "Hai tên lừa đảo gặp nhau và hợp tác trong những phi vụ dở khóc dở cười.",
+            id: 10,
+            title: "Siêu Lừa Gặp Siêu Lầy",
+            year: 2023,
+            description: "Khoa, một tên lừa đảo, đến Phú Quốc với ý định lừa đảo. Anh gặp Tú, một tên lừa đảo 'lầy lội' khác. Cả hai hợp tác trong nhiều phi vụ dở khóc dở cười trước khi đối mặt với một đối thủ lớn.",
             imageUrl: "https://tse1.mm.bing.net/th/id/OIP.wqDOC6JOXfblf2BIRrMLlQHaK4?rs=1&pid=ImgDetMain&o=7&rm=3",
             trailerUrl: "https://www.youtube.com/embed/oNqD2HxBUq4",
             duration: "112 phút", rating: "T16", genre: "Hài, Hành động",
             director: "Võ Thanh Hòa", cast: "Anh Tú, Mạc Văn Khoa, Ngọc Phước", release_date: "2023-09-22"
         }
     ];
+
 
     const initialUsers = [
         { id: 1, username: "admin", email: "admin@gmail.com", role: "admin", total_bookings: 3, total_spent: 1200000 },
